@@ -24,14 +24,18 @@ operationButtons.forEach(operation => {
     })
 })
 
-clearScreenButton.addEventListener('click', clearScreen())
+clearScreenButton.addEventListener('click', ()=>{
+    clearScreen()
+})
 
 equalButton.addEventListener('click', () => {
     evaluate();
     updateScreen();
 })
 
-deleteButton.addEventListener('click', deleteNumber())
+deleteButton.addEventListener('click', ()=>{
+    deleteNumber();
+})
 
 function clearScreen() {
     firstOperand = '';
@@ -47,6 +51,7 @@ function deleteNumber() {
 
 function appendNumber(number) {
     if (number === '.' && firstOperand.includes('.')) return;
+    if(firstOperand.length > 5) return;
     firstOperand = firstOperand.toString() + number.toString();
 }
 
@@ -64,6 +69,7 @@ function evaluate() {
     let calculation = 0;
     first = parseFloat(firstOperand);
     second = parseFloat(secondOperand);
+    if(isNaN(first) || isNaN(second)) return;
     switch (operator) {
         case '+':
             calculation = second + first;

@@ -23,8 +23,9 @@ body {
 /*  || Display css ||  */
 .display {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: space-between;
+    overflow: hidden;
     align-items: end;
     padding: 15px;
     font-size: 30px;
@@ -39,7 +40,7 @@ body {
     color: #B0B3B8;
 }
 
-.currentOperationScreen {
+.currentOperationScreen {   
     font-Size: 42px;
     color: #7CE38B;
 }
