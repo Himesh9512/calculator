@@ -9,6 +9,7 @@ body {
     align-items: center;
     background-color: #000000;
 }
+
 .container {
     height: 550px;
     width: 300px;
@@ -19,11 +20,13 @@ body {
     border-radius: 15px;
 }
 
+/*  || Display css ||  */
 .display {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: end;
-    padding: 5px;
+    padding: 15px;
     font-size: 30px;
     border-radius: 15px;
     border: 1px solid black;
@@ -32,6 +35,15 @@ body {
     color: #ffffff;
 }
 
+.lastScreen {
+    color: #B0B3B8;
+}
+
+.currentScreen {
+    font-Size: 42px;
+    color: #7CE38B;
+}
+/*  || Keypad-button css ||  */
 .keypad {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
@@ -51,14 +63,36 @@ body {
     align-items: center;
     border-radius: 15px;
     background-color: #121212;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-    outline: none;
     color: #ccc;
-    background-size: 0 100%;
-    background-position: left;
     transition: all 0.2s ease-in-out;
 }
 
+.operator {
+    font-size: 20px;
+}
+
+.number:hover {
+    color: #111;
+    background-color: #fff;
+    background-size: 100% 100%;
+}
+
+.operator:hover {
+    color: #111;
+    background-color: #03DAC6;
+}
+
+.clear:hover {
+    color: #111;
+    background-color: #CC3333;
+}
+
+.equal:hover {
+    color: #111;
+    background-color: #BB86FC;
+}
+
+/* ||  buttons grid alignment  || */
 .last{
     grid-template-areas:
         "a a a b" ;
@@ -79,28 +113,4 @@ body {
 
 .first > .operator {
     grid-area: c;
-}
-.operator {
-    font-size: 20px;
-}
-
-.number:hover {
-    color: #111;
-    background-color: #fff;
-    background-size: 100% 100%;
-}
-
-.operator:hover {
-    color: #111;
-    background-color: #03DAC6;
-}
-
-.clear:hover {
-    color: #111;
-    background-color: #CF6679;
-}
-
-.equal:hover {
-    color: #111;
-    background-color: #BB86FC;
 }
