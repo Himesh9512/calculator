@@ -35,14 +35,15 @@ body {
     color: #ffffff;
 }
 
-.lastScreen {
+.previousOperationScreen {
     color: #B0B3B8;
 }
 
-.currentScreen {
+.currentOperationScreen {
     font-Size: 42px;
     color: #7CE38B;
 }
+
 /*  || Keypad-button css ||  */
 .keypad {
     display: grid;
@@ -65,6 +66,7 @@ body {
     background-color: #121212;
     color: #ccc;
     transition: all 0.2s ease-in-out;
+    user-select: none;
 }
 
 .operator {
@@ -93,12 +95,7 @@ body {
 }
 
 /* ||  buttons grid alignment  || */
-.last{
-    grid-template-areas:
-        "a a a b" ;
-}
-
-.first{
+.first , .last{
     grid-template-areas:
     "a a b c" ;
 }
@@ -107,10 +104,10 @@ body {
     grid-area: a;
 }
 
-.first > .delete , .last > .operator{
+.first > .delete , .last > .decimal{
     grid-area: b;
 }
 
-.first > .operator {
+.first > .operator , .last > .equal {
     grid-area: c;
 }
