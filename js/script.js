@@ -1,3 +1,4 @@
+// on load Calc values
 let firstOperand = '';
 let secondOperand = '';
 let operator = '';
@@ -11,6 +12,7 @@ const deleteButton = document.querySelector('.delete');
 const equalButton = document.querySelector('.equal')
 
 numberButtons.forEach(number => {
+    // On every number clicked, add a number to the calculator's display.
     number.addEventListener('click', () => {
         appendNumber(number.innerHTML);
         updateScreen();
@@ -45,7 +47,7 @@ function clearScreen() {
 }
 
 function deleteNumber() {
-    firstOperand = firstOperand.toString().slice(0, -1);
+    firstOperand = firstOperand.toString().slice(0, -1); // Remove a digit from the firstOperand string.
     updateScreen();
 }
 
@@ -69,7 +71,7 @@ function evaluate() {
     let calculation = 0;
     first = parseFloat(firstOperand);
     second = parseFloat(secondOperand);
-    if(isNaN(first) || isNaN(second)) return;
+    if(isNaN(first) || isNaN(second)) return; // Return if the given strings are not a number.    
     switch (operator) {
         case '+':
             calculation = second + first;
